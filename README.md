@@ -2,7 +2,7 @@
 
 Credit decisioning → portfolio risk → BNPL checkout, built on public data.
 
-**Status:** 🚧 Early development (Oct 2026) — loan mathematics module and unit tests in place.
+**Status:** 🚧 Early development (Oct 2026), loan mathematics module and unit tests in place.
 
 ## Project structure
 

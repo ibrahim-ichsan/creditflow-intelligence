@@ -15,15 +15,31 @@ def monthly_installment(principal, annual_rate, tenor_months):
 
 
 def amortization_schedule(principal, annual_rate, tenor_months):
-    """Return list of dict, satu dict per bulan, berisi:
-    month, installment, interest, principal_paid, balance
-    """
+    """...docstring..."""
     # TODO 4: panggil monthly_installment untuk dapat cicilan
+    installment = monthly_installment(principal, annual_rate, tenor_months)
+    r = annual_rate / 12
+
     # TODO 5: siapkan list kosong + sisa pokok awal = principal
-    # TODO 6: loop dari bulan 1 sampai tenor_months:
-    #   bunga bulan ini      = sisa pokok * r
-    #   pokok dibayar        = cicilan - bunga
-    #   sisa pokok baru      = sisa pokok - pokok dibayar
-    #   simpan sebagai dict ke list
+    rows = []
+    balance = principal
+
+    # TODO 6: loop dari bulan 1 sampai tenor_months
+    for month in range(1, tenor_months + 1):
+      #   bunga bulan ini      = sisa pokok * r
+        interest = balance * r
+      #   pokok dibayar        = cicilan - bunga
+        principal_paid = installment - interest
+      #   sisa pokok baru      = sisa pokok - pokok dibayar
+        balance = balance - principal_paid
+      #   simpan sebagai dict ke list
+        rows.append({
+            "month": month,
+            "installment": installment,
+            "interest": interest,
+            "principal_paid": principal_paid,
+            "balance": balance,
+        })
+
     # TODO 7: return list-nya
-    pass
+    return rows

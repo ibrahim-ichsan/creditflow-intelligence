@@ -223,3 +223,7 @@ __marimo__/
 data/
 *.csv
 *.zip
+
+# parameter internal — jangan pernah di-commit
+private/
+*.xlsx

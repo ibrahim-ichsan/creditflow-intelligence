@@ -24,7 +24,7 @@ EXAMPLE_ONLOAN = {
     "scheme": "onloan",
     "provisi_base": "ph_murni",
     "round_ph_total": 1000,
-    "disbursement": "otr_minus_tdp",
+    "disbursement": "principal_minus_tdp",
     "fidusia": EXAMPLE_FIDUSIA,
     "insurance": {
         "depreciation": EXAMPLE_DEPRECIATION,
@@ -36,11 +36,9 @@ EXAMPLE_ONLOAN = {
     },
 }
 
-# Ditulis utuh, bukan {**EXAMPLE_ONLOAN, ...}: unpacking hanya menyalin lapisan
-# teratas, sehingga kedua produk akan berbagi objek dict "insurance" yang sama.
 EXAMPLE_OFFLOAN = {
     "scheme": "offloan",
-    "provisi_base": None,
+    "provisi_base": "otr_less_dp",
     "round_ph_total": None,
     "disbursement": "otr_minus_tdp",
     "fidusia": EXAMPLE_FIDUSIA,

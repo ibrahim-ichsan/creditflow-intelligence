@@ -51,3 +51,14 @@ EXAMPLE_OFFLOAN = {
         "loading_applies_to": {"ALL RISK"},
     },
 }
+
+
+EXAMPLE_DBR_RULES = [
+    ({"universe": "A", "joint_income": True}, 0.90),
+    ({"universe": "A", "joint_income": False}, 0.70),
+    ({"universe": "B", "payroll": False, "min_salary": 10_000_000}, 0.60),
+    ({"universe": "B", "payroll": False}, 0.50),
+    ({"universe": "B", "payroll": True, "ecosystem": True}, 0.70),
+    ({"universe": "B", "payroll": True, "ecosystem": False}, 0.60),
+    ({"universe": "C"}, 0.50),
+]
